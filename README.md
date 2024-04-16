@@ -1,8 +1,10 @@
-Azure Access Package Management using Terraform
+**Azure Access Package Management using Terraform**
+
+
 This repository contains Terraform code to manage Azure Active Directory (Azure AD) access packages, allowing department managers to grant access to specific sets of resources for their teams.
 
 Prerequisites
-Before you begin, make sure you have the following :
+Before you begin, make sure you have the following installed:
 
 - TAzure subscription
 - Azure CLI installed
@@ -30,8 +32,18 @@ azuread_access_package_resource_package_association: Associates resources with t
 azuread_user: Creates an Azure AD user for requester.
 null_resource with local-exec provisioner: Executes Azure CLI command to assign a user as a requester.
 
+Usage
+Initialize Terraform:
+terraform init
 
-Assigning Requesters
+Review the Terraform plan:
+terraform plan
+
+Apply the Terraform configuration:
+terraform apply
+
+**Assigning Requesters**
+
 To assign a user as a requester to an access package, a local-exec provisioner with an Azure CLI command is used. Make sure to replace placeholders with actual values before running Terraform commands.
 
 # Local-exec provisioner to assign user as requester
